@@ -1,0 +1,35 @@
+.section-title {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 35px;
+  color: #304b73;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.more-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.more-btn {
+  background: #304b73;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

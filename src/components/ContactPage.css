@@ -1,0 +1,418 @@
+/* ContactPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap');
+ 
+/* ── PAGE ─────────────────────────────────────────── */
+.cp-page {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+ 
+/* ── HERO ─────────────────────────────────────────── */
+.cp-hero {
+  position: relative;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+ 
+.cp-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a2a4a 0%, #0f1c35 50%, #1a3a5c 100%);
+}
+ 
+.cp-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(245,166,35,.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 60%, rgba(26,90,140,.30) 0%, transparent 50%);
+}
+ 
+.cp-bokeh {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(16px);
+  opacity: .35;
+  pointer-events: none;
+}
+.cp-b1 { width:90px; height:90px; background:#f5a623; top:20%; right:15%; }
+.cp-b2 { width:60px; height:60px; background:#3b82f6; bottom:15%; right:30%; }
+.cp-b3 { width:50px; height:50px; background:#f5a623; top:50%; left:10%; }
+.cp-b4 { width:40px; height:40px; background:#60a5fa; top:10%; left:25%; }
+ 
+.cp-hero-content {
+  position: relative;
+  z-index: 2;
+}
+ 
+.cp-hero-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -.5px;
+}
+ 
+.cp-hero-sub {
+  color: rgba(255,255,255,.75);
+  font-size: .95rem;
+  max-width: 480px;
+  line-height: 1.6;
+  margin: 0;
+}
+ 
+/* ── MAIN ─────────────────────────────────────────── */
+.cp-main {
+  max-width: 1060px;
+  margin: -60px auto 0;
+  padding: 0 24px 60px;
+  position: relative;
+  z-index: 3;
+}
+ 
+.cp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+ 
+/* ── FORM CARD ────────────────────────────────────── */
+.cp-form-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.15);
+}
+ 
+.cp-form-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a2a4a;
+  margin: 0 0 24px;
+}
+ 
+.cp-success {
+  background: #ecfdf5;
+  border: 1.5px solid #6ee7b7;
+  color: #065f46;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: .875rem;
+  margin-bottom: 18px;
+}
+ 
+.cp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+ 
+.cp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+ 
+.cp-form-group label {
+  font-size: .8rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+ 
+.cp-form-group input,
+.cp-form-group select,
+.cp-form-group textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: .875rem;
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+}
+ 
+.cp-form-group input::placeholder,
+.cp-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+ 
+.cp-form-group input:focus,
+.cp-form-group select:focus,
+.cp-form-group textarea:focus {
+  border-color: #1a2a4a;
+  box-shadow: 0 0 0 3px rgba(26,42,74,.08);
+}
+ 
+.cp-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+ 
+.cp-btn-submit {
+  background: #1a2a4a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+ 
+.cp-btn-submit:hover {
+  background: #f5a623;
+  color: #1a2a4a;
+  transform: translateY(-1px);
+}
+ 
+/* ── RIGHT COL ────────────────────────────────────── */
+.cp-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+/* ── COORDS ───────────────────────────────────────── */
+.cp-coords-card {
+  background: #1a2a4a;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.15);
+  color: #ffffff;
+}
+ 
+.cp-coords-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5a623;
+  margin: 0 0 20px;
+}
+ 
+.cp-coord-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+ 
+.cp-coord-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: .9rem;
+}
+ 
+.cp-coord-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+ 
+.cp-coord-label {
+  font-size: .7rem;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+ 
+.cp-coord-value {
+  font-size: .85rem;
+  color: rgba(255,255,255,.9);
+  line-height: 1.4;
+}
+ 
+/* ── MAP ──────────────────────────────────────────── */
+.cp-map-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  height: 200px;
+  position: relative;
+  background: #dde8f0;
+}
+ 
+.cp-map-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+ 
+.cp-map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: .82rem;
+  color: #4b5563;
+}
+ 
+.cp-map-pin { font-size: 1.8rem; }
+ 
+.cp-map-hint {
+  font-size: .75rem;
+  color: #9ca3af;
+}
+ 
+.cp-map-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: .75rem;
+  font-weight: 500;
+  color: #1a2a4a;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+ 
+/* ── FAQ ──────────────────────────────────────────── */
+.cp-faq {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+ 
+.cp-faq-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2a4a;
+  text-align: center;
+  margin: 0 0 8px;
+}
+ 
+.cp-faq-sub {
+  text-align: center;
+  color: #9ca3af;
+  font-size: .875rem;
+  margin: 0 0 28px;
+}
+ 
+.cp-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+ 
+.cp-faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  border-left: 3px solid #f5a623;
+  transition: transform .2s, box-shadow .2s;
+}
+ 
+.cp-faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(0,0,0,.15);
+}
+ 
+.cp-faq-q {
+  font-family: 'Sora', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #1a2a4a;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+ 
+.cp-faq-icon {
+  background: #1a2a4a;
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: .7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+ 
+.cp-faq-a {
+  font-size: .845rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+ 
+/* ── EMAIL PROMPT ─────────────────────────────────── */
+.cp-email-prompt {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  max-width: 1012px;
+  margin: 0 auto 40px;
+  padding: 28px 24px;
+}
+ 
+.cp-email-prompt p {
+  color: #4b5563;
+  font-size: .875rem;
+  margin: 0 0 6px;
+}
+ 
+.cp-email-prompt a {
+  color: #1a2a4a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: .9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid #f5a623;
+  padding-bottom: 1px;
+  transition: color .2s;
+}
+ 
+.cp-email-prompt a:hover { color: #f5a623; }
+ 
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .cp-grid     { grid-template-columns: 1fr; }
+  .cp-form-row { grid-template-columns: 1fr; }
+  .cp-faq-grid { grid-template-columns: 1fr; }
+  .cp-hero-title { font-size: 1.6rem; }
+  .cp-main   { padding-left: 16px; padding-right: 16px; }
+  .cp-faq    { padding-left: 16px; padding-right: 16px; }
+}
