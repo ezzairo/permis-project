@@ -1,0 +1,43 @@
+/* --- PANNEAUX HERO --- */
+.panneaux-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.panneaux-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=600');
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- HOVER EFFECT FOR CARDS --- */
+.panneau-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.panneau-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* --- ANIMATIONS --- */
+.animate-fade-down {
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: slidePanel 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slidePanel 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slidePanel {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

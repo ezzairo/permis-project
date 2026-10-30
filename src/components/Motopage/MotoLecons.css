@@ -1,0 +1,78 @@
+/* --- LECONS HERO SECTION --- */
+.lecons-hero-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 70%, #020617 100%);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.lecons-hero-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: url('https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&w=1200');
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- INTERACTIONS WITH INTERACTIVE BUTTONS --- */
+.tab-selector-btn {
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0.85;
+}
+
+.tab-selector-btn:hover {
+  opacity: 1;
+  transform: translateX(4px);
+  background-color: #f8fafc;
+}
+
+.tab-selector-btn.active-tab {
+  opacity: 1;
+  transform: translateX(6px);
+  font-weight: 700 !important;
+}
+
+/* --- CINEMATIC SMOOTH ANIMATIONS --- */
+.animate-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideSlowLecon 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideSlowLecon 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideSlowLecon 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideSlowLecon {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  40% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .tab-selector-btn:hover {
+    transform: none;
+  }
+  .tab-selector-btn.active-tab {
+    transform: none;
+  }
+}

@@ -1,0 +1,52 @@
+.footer {
+  width: 100%;
+  background: #f5f7fb;
+  padding: 40px 20px;
+  border-top: 1px solid #e5e7eb;
+  box-sizing: border-box;
+  
+  /* hadchi bch yched kolchi lwest verticalement */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.footer-title {
+  font-size: 24px;
+  color: #1e3a60;
+  margin: 0 0 20px 0; /* margin lte7t bch yb3d 3la info */
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center; /* l-west */
+  align-items: center;
+  gap: 60px; /* had l-gap hya li katb3d email 3la lissr o nmra 3la limen */
+  width: 100%;
+  max-width: 600px; /* limits how far apart they can go */
+  margin-bottom: 30px; /* space down to copyright */
+}
+
+.footer-info p {
+  font-size: 16px;
+  color: #4b5563;
+  margin: 0;
+  white-space: nowrap; /* katmna3 text ythres 3la joj s7ora */
+}
+
+.copyright {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* ila t7al f tlifon yb9a m9ad blla maytkhrbk */
+@media (max-width: 480px) {
+  .footer-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

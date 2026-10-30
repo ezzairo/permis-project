@@ -1,0 +1,62 @@
+/* --- EXAM HERO LAYER --- */
+.exam-hero-banner {
+  background: linear-gradient(135deg, #1e2530 0%, #111827 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.exam-hero-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200');
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- CARD HOVERS & INTERACTIONS --- */
+.exam-question-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exam-question-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
+
+.exam-opt-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.exam-opt-btn:hover:not([disabled]) {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  transform: translateX(3px);
+}
+
+/* --- CINEMATIC LIGHT ANIMATIONS --- */
+.animate-fade-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideQuickExam 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideQuickExam 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideQuickExam {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Overrides */
+@media (max-width: 576px) {
+  .exam-opt-btn:hover:not([disabled]) {
+    transform: none;
+  }
+}

@@ -1,0 +1,225 @@
+:root {
+  --emerald: #1A281E;
+  --input-bg: #E8EEF2;
+  --btn-blue: #4A6276;
+}
+
+.login-wrapper {
+  background-color: #F8FAFC;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Background Gear (Rwayda) --- */
+.bg-animation-layer {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.giant-wheel {
+  font-size: 60rem;
+  color: var(--emerald);
+  opacity: 0.07; 
+  display: inline-block;
+  animation: ultraSlowSpin 80s linear infinite;
+  filter: blur(5px);
+}
+
+.custom-nav {
+  padding: 1.5rem 4rem;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  color: var(--emerald);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -1px;
+}
+
+/* --- Animation l-jdida dial l-Logo --- */
+.animate-logo {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(5px);
+  animation: revealLogo 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes revealLogo {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(5px);
+    letter-spacing: 4px;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    letter-spacing: -1px; /* Rj3at kima kant f l-asl */
+  }
+}
+
+.back-home {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- Reveal Animation --- */
+.split-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  padding: 0 4rem 2rem 4rem;
+  gap: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.image-side {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  z-index: 10;
+  animation: revealImage 1.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  animation: revealForm 2s cubic-bezier(0.77, 0, 0.175, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes revealImage {
+  0% { transform: translateX(55%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes revealForm {
+  0% { transform: translateX(-40%); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* --- Styling --- */
+.hero-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: imageZoom 30s infinite alternate ease-in-out;
+}
+
+.glass-content {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+.input-group-custom {
+  background-color: var(--input-bg);
+  padding: 14px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.input-group-custom:focus-within {
+  background-color: #fff;
+  border-color: var(--emerald);
+}
+
+.input-group-custom input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+/* --- Fix dial l-3in (Browser Icons) --- */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+}
+
+.btn-emerald {
+  background-color: var(--btn-blue);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-emerald:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.custom-footer {
+  background-color: #f8fafc;
+  padding: 2rem 4rem;
+  border-top: 1px solid #eee;
+  z-index: 20;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+@keyframes ultraSlowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes imageZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@media (max-width: 992px) {
+  .split-screen { grid-template-columns: 1fr; padding: 0 2rem 2rem 2rem;}
+  .image-side, .form-side { animation: none; opacity: 1; transform: none; }
+  .bg-animation-layer { display: none; }
+  .custom-nav { padding: 1.5rem 2rem; }
+}

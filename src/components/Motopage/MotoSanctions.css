@@ -1,0 +1,53 @@
+/* --- HERO DESIGN LAYER --- */
+.sanctions-hero {
+  background: linear-gradient(135deg, #1e1b4b 0%, #31102f 50%, #0f172a 100%);
+}
+
+.sanctions-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: url('https://images.unsplash.com/photo-1541535881962-3bb380b08458?w=800');
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- TABLE ROW HOVER STYLING --- */
+.sanction-row-item {
+  transition: background-color 0.15s ease;
+}
+
+.sanction-row-item:hover {
+  background-color: #fafafa !important;
+}
+
+.text-warning-dark {
+  color: #854d0e !important;
+}
+
+/* --- ANIMATION RENDERING FLOW --- */
+.animate-fade-down {
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: slideSanction 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(35px);
+  animation: slideSanction 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideSanction {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* Table Responsive Override Fix */
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 0;
+  }
+}
