@@ -1,16 +1,35 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Permis Project — Driving Licence Learning Platform
+PFE (Final Project) — OFPPT Digital Development
+A web platform to help learners prepare for the driving licence.
+It covers licence categories, course media, and exam results,
+with an admin area to manage users and content.
+Features
+Home page, navigation and layout for learners
+Login and registration
+Licence pages: Moto (A) and Voiture (B)
+Course media: videos and images, e.g. parking, prohibition signs
+  and manoeuvres
+Execution / practice cards and results
+Admin dashboard: user management, categories and exam scores
+Tech Stack
+React
+JavaScript
+CSS
+Vite
+Project Structure
+src/components/Admin/ — Admin dashboard
+src/components/Execution/ — Practice cards and results
+src/components/Home/, src/components/Layout/,
+  src/components/Navbar/, src/components/Footer/ — Pages and layout
+src/components/Login/, src/components/Register/ — Authentication pages
+src/components/Motopage/, src/components/VoiturePage/ — Licence categories
+src/data/ — Demo / mock data
+src/App.jsx, src/main.jsx — App entry
+Run Locally
+npm install
+npm run dev
+Note: use the scripts defined in package.json if they differ.
+Do not commit node_modules — it is installed from package.json.
+About
+Built as my OFPPT PFE project. Demo data is used for users,
+scores and media in the current version.
